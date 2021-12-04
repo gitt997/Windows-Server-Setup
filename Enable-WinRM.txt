@@ -1,0 +1,14 @@
+# Enable WinRM
+# Download and run
+
+Invoke-Webrequest -Uri https://github.com/ansible/ansible/blob/devel/examples/scripts/ConfigureRemotingForAnsible.ps1
+
+winrm get winrm/config/Service
+winrm get winrm/config/Winrs
+
+$Password = Read-Host -AsSecureString
+$NewUsername = "Input desired username" -AsSecureString
+$NewUserFullName = "Input desired user full name" -AsSecureString
+
+New-LocalUser $NewUserName -Password $Password -FullName $NewUserFullName
+Add-LocalGroupMember -Group "Administrators" -Member $NewUsername
