@@ -14,3 +14,8 @@ $NewUserFullName = Read-Host "Input desired user full name"
 
 New-LocalUser $NewUserName -Password $Password -FullName $NewUserFullName
 Add-LocalGroupMember -Group "Administrators" -Member $NewUsername
+
+
+$NewComputerName = Read-Host "Input new computer name"
+Rename-Computer -NewName $NewComputerName -force
+Restart-Computer
