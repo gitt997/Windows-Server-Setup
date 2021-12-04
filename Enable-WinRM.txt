@@ -1,7 +1,7 @@
 # Enable WinRM
 # Download and run
 
-Invoke-Webrequest -Uri https://github.com/ansible/ansible/blob/devel/examples/scripts/ConfigureRemotingForAnsible.ps1
+Invoke-Webrequest -Uri https://raw.githubusercontent.com/gitt997/Windows-Server-Setup/main/ConfigureWinRM.ps1 -OutFile ConfigureWinRM.ps1
 
 winrm get winrm/config/Service
 winrm get winrm/config/Winrs
